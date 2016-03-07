@@ -1,0 +1,130 @@
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  width: 100%;
+  height: 100%; }
+
+small {
+  font-size: 14px; }
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch; }
+
+.projects {
+  flex-grow: 1;
+  background: #4B78E8;
+  color: white;
+  text-align: right;
+  vertical-align: top;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.main-title {
+  font-weight: normal;
+  font-size: 3em;
+  margin: 0 10px 1em; }
+
+.repos {
+  margin: 0;
+  padding: 0; }
+
+.repo-title {
+  margin-right: 10px; }
+  .repo-title.active {
+    margin-right: 0; }
+    .repo-title.active::after {
+      content: "";
+      display: inline-block;
+      border-right: 10px solid white;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      margin-left: 10px; }
+
+.repo-item {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em; }
+
+.repo-info {
+  flex-grow: 2;
+  display: inline-block;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.repo-stats {
+  padding: 0;
+  margin-bottom: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.repo-stats--item {
+  list-style: none; }
+
+.repo-stats--count {
+  font-size: 1.4em;
+  vertical-align: middle;
+  margin-left: 0.3em;
+  line-height: 1; }
+
+.repo-commits {
+  margin: 0;
+  padding: 0; }
+
+.repo-commits--item {
+  border: 1px solid #ccc;
+  list-style: none;
+  border-radius: 4px;
+  padding: 0.6em;
+  margin: 0 0 0.7em 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start; }
+
+.repo-commits--avatar {
+  flex-grow: 0;
+  margin: 0 1em 0 0;
+  width: 50px; }
+
+.repo-commits--content {
+  flex-grow: 3; }
+
+.repo-commits--title {
+  margin: 0;
+  font-size: 1.2em; }
+
+.repo-commits--user {
+  margin: 0; }
+
+.repo-commits--date {
+  flex-grow: 0;
+  margin: 0; }
+
+.load-more {
+  background: #ccc;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 0.6em;
+  width: 100%;
+  font-size: 1em; }
+
+/*# sourceMappingURL=style.css.map */

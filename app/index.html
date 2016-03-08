@@ -20,7 +20,7 @@
 			<ul class="repos">
 				
 				<li class="repo-title" ng-repeat="repo in repos">
-					<a is-active-nav href="/#/repos/{{ repo.name }}" class="repo-item">{{ repo.name }}</a>
+					<a is-active-nav href="/#/repos/{{ repo.name }}" class="repo-item" ng-click="carryData(repo)">{{ repo.name }}</a>
 				</li>
 			</ul>
 		</section>

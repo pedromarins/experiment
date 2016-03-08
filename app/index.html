@@ -19,7 +19,7 @@
 
 			<ul class="repos">
 				
-				<li class="repo-title" ng-repeat="repo in repos">
+				<li class="repo-title" ng-repeat="repo in repos | orderBy:'-stargazers_count'">
 					<a is-active-nav href="/#/repos/{{ repo.name }}" class="repo-item" ng-click="carryData(repo)">{{ repo.name }}</a>
 				</li>
 			</ul>

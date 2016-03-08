@@ -1,0 +1,18 @@
+<div class="repo-info--content">
+	<ul class="repo-stats">
+		<li class="repo-stats--item">stars<span class="repo-stats--count">{{ repo.stars }}</span></li>
+		<li class="repo-stats--item">forks<span class="repo-stats--count">{{ repo.forks }}</span></li>
+		<li class="repo-stats--item">contribs<span class="repo-stats--count">{{ repo.contribs }}</span></li>
+	</ul>
+	<ul class="repo-commits">
+		<li class="repo-commits--item" ng-repeat="commit in commits">
+			<img src="{{ commit.author.avatar_url }}" alt="@pedromarins" class="repo-commits--avatar">
+			<div class="repo-commits--content">
+				<p class="repo-commits--title">{{ commit.commit.message }}</p>
+				<p class="repo-commits--user">@{{ commit.author.login }}</p>
+			</div>
+			<p class="repo-commits--date">{{ commit.commit.author.date | date:'dd/MM/yyyy' }}</p>
+		</li>
+		<button type="button" class="load-more" ng-click="loadMore()">Carregar mais</button>
+	</ul>
+</div>

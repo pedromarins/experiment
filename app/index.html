@@ -25,29 +25,10 @@
 			</ul>
 		</section>
 
-		<section class="repo-info" ng-controller="CommitListCtrl">
-			<div class="repo-info--content">
-				<ul class="repo-stats">
-					<li class="repo-stats--item">stars<span class="repo-stats--count">{{ repo.stars }}</span></li>
-					<li class="repo-stats--item">forks<span class="repo-stats--count">{{ repo.forks }}</span></li>
-					<li class="repo-stats--item">contribs<span class="repo-stats--count">{{ repo.contribs }}</span></li>
-				</ul>
-				<ul class="repo-commits">
-					<li class="repo-commits--item" ng-repeat="commit in commits">
-						<img src="{{ commit.author.avatar_url }}" alt="@pedromarins" class="repo-commits--avatar">
-						<div class="repo-commits--content">
-							<p class="repo-commits--title">{{ commit.commit.message }}</p>
-							<p class="repo-commits--user">@{{ commit.author.login }}</p>
-						</div>
-						<p class="repo-commits--date">{{ commit.author.date }}</p>
-					</li>
-					<button type="button" class="load-more">Carregar mais</button>
-				</ul>
-			</div>
-		</section>
-	</main>
+	<div ng-view class="repo-info" ng-controller="CommitListCtrl"></div>
+</main>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-	<script src="js/controller.js"></script>
+
+	
 </body>
 </html>

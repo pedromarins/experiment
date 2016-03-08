@@ -53,7 +53,7 @@ main
 		&::after
 			content: ''
 			display: inline-block
-			border-right: 10px solid white
+			border-right: 15px solid white
 			border-top: 7px solid transparent
 			border-bottom: 7px solid transparent
 			margin-left: 10px
@@ -61,7 +61,7 @@ main
 .repo-item
 	color: white
 	text-decoration: none
-	font-size: 1.2em
+	font-size: 1em
 
 
 // --------------------------------------------------------------------------- repo-info
@@ -71,7 +71,7 @@ main
 	padding: 0 5% 5%
 	display: flex
 	flex-direction: column
-	justify-content: center
+	justify-content: flex-start
 
 .repo-info--content
 
@@ -111,22 +111,24 @@ main
 .repo-commits--avatar
 	flex-grow: 0
 	margin: 0 1em 0 0 
-	width: 50px
-	height: 50px
+	width: 40px
+	height: 40px
 
 .repo-commits--content
 	flex-grow: 3
 
 .repo-commits--title
 	margin: 0
-	font-size: 1.2em
+	font-size: 0.9em
 
 .repo-commits--user
 	margin: 0
+	font-size: 0.7em
 
 .repo-commits--date
 	flex-grow: 0
 	margin: 0
+	font-size: 0.7em
 
 .load-more
 	background: $gray

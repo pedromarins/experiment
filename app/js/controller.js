@@ -51,6 +51,13 @@ repoControllers.controller('CommitListCtrl', ['$rootScope', '$scope', '$http', '
 	    		}, true
 	    	);
 	    })();
+
+	    // get contributors and commits count
+	    (function () {
+		    $http.get('https://api.github.com/repos/Netflix/' + $scope.repoName + '/stats/contributors').success(function(data) {
+				$scope.contributors = data;
+		})();
+		
 	}]);
 
 repoControllers.service("currentRepo", function () {

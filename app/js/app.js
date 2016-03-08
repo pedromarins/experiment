@@ -1,5 +1,5 @@
 var repos = angular.module('repos', [
-	'ngRoute', 'repoControllers'
+	'ngRoute', 'repoControllers', 'repoDirectives'
 ]);
 
 repos.config(['$routeProvider',

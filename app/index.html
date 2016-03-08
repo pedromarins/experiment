@@ -10,6 +10,7 @@
 	<script src="bower_components/angular-route/angular-route.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/controller.js"></script>
+	<script src="js/directive.js"></script>
 </head>
 <body>
 	<main ng-controller="RepoListCtrl">
@@ -17,8 +18,9 @@
 			<h1 class="main-title">projetos</h1>
 
 			<ul class="repos">
-				<li class="repo-title active" ng-repeat="repo in repos | orderBy:watchers_count">
-					<a href="#" class="repo-item">{{ repo.name }}</a>
+				
+				<li class="repo-title" ng-repeat="repo in repos">
+					<a is-active-nav href="/#/repos/{{ repo.name }}" class="repo-item">{{ repo.name }}</a>
 				</li>
 			</ul>
 		</section>

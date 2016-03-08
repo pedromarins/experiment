@@ -14,8 +14,21 @@ repoControllers.controller('CommitListCtrl', ['$scope', '$http', '$routeParams',
 	
 	function($scope, $http, $routeParams) {
     	$scope.repoName = $routeParams.repoName;
-    	
-		$http.get('https://api.github.com/repos/netflix/' + $scope.repoName + '/commits').success(function(data) {
+    	$scope.currentPage = 1;
+    	$scope.totalPages = 1;
+
+		$http.get('https://api.github.com/repos/netflix/' + $scope.repoName + '/commits?page=' + $scope.currentPage + '&per_page=20').success(function(data) {
 			$scope.commits = data;
+			$scope.currentPage++;
 		});
+
+		$scope.loadMore = function () {
+			$http.get('https://api.github.com/repos/netflix/' + $scope.repoName + '/commits?page=' + $scope.currentPage + '&per_page=20').success(function(data) {
+				$scope.commits.push.apply($scope.commits, data);
+				console.log($scope.commits);
+				$scope.currentPage++;
+			});
+
+			$scope.currentPage++;
+		}
 	}]);

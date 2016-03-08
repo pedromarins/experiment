@@ -1,14 +1,20 @@
-var repos = angular.module('repos', []);
+var repoControllers = angular.module('repoControllers', []);
 
-repos.controller('RepoListCtrl', function ($scope, $http) {
-  $http.get('https://api.github.com/orgs/netflix/repos').success(function(data) {
-    $scope.repos = data;
-  });
-})
+repoControllers.controller('RepoListCtrl', ['$scope', '$http',
+	function ($scope, $http) {
 
-.controller('CommitListCtrl', function ($scope, $http) {
-  $http.get('https://api.github.com/repos/netflix/astyanax/commits').success(function(data) {
-    console.log(data);
-    $scope.commits = data;
-  });
-});
+
+		$http.get('https://api.github.com/orgs/netflix/repos').success(function(data) {
+			$scope.repos = data;
+		});
+	}]);
+
+repoControllers.controller('CommitListCtrl', ['$scope', '$http', '$routeParams',
+	
+	function($scope, $http, $routeParams) {
+    	$scope.repoName = $routeParams.repoName;
+    	
+		$http.get('https://api.github.com/repos/netflix/' + $scope.repoName + '/commits').success(function(data) {
+			$scope.commits = data;
+		});
+	}]);

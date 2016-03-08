@@ -4,7 +4,8 @@ repoControllers.controller('RepoListCtrl', ['$scope', '$http',
 	function ($scope, $http) {
 
 
-		$http.get('https://api.github.com/orgs/netflix/repos').success(function(data) {
+		$http.get('https://api.github.com/orgs/netflix/repos?per_page=1000').success(function(data) {
+			console.log(data.length);
 			$scope.repos = data;
 		});
 	}]);
